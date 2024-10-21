@@ -24,6 +24,12 @@ describe('GET /musicians', () => {
         const responseData = JSON.parse(response.text);
     });
 
+    test("Testing musicians endpoint", async () => {
+        // Sends request to `/bakedGoods` endpoint
+        const response = await request(app).get("/musicians/:id");
+        expect(response.statusCode).toBe(200);
+        const responseData = JSON.parse(response.text);
+    });
 
 
 
