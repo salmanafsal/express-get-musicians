@@ -32,6 +32,12 @@ app.get('/Bands', async (req, res) => {
     res.json(getData); // Send back the array of musicians as JSON
   });
 
+  app.get('/users/:id', async (req, res) => {
+
+    const user = await User.findByPk(req.params.id);
+    res.send(user);
+  });
+
 
 
 module.exports = app;
