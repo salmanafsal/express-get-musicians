@@ -21,7 +21,8 @@ describe('GET /musicians', () => {
         // Sends request to `/bakedGoods` endpoint
         const response = await request(app).get("/musicians");
         expect(response.statusCode).toBe(200);
-        const responseData = JSON.parse(response.);
+
+        const responseData = JSON.parse(response.text);
     });
 
     test("Testing musicians endpoint", async () => {
