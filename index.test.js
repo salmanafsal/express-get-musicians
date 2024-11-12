@@ -26,9 +26,11 @@ describe('GET /musicians', () => {
 
     test("Testing musicians endpoint", async () => {
         // Sends request to `/bakedGoods` endpoint
-        const response = await request(app).get("/musicians/:id");
+        const response = await request(app).get("/musicians/1");
         expect(response.statusCode).toBe(200);
-        const responseData = JSON.parse(response.text);
+        const responseData = response.body; // Automatically parsed JSON response
+        expect(responseData).toHaveProperty("id", 1); // Example check, adjust as needed
+        expect(responseData).toHaveProperty("name","Mick Jagger"); // Example check, adjust to actual musician properties
     });
 
 
